@@ -5,6 +5,9 @@ from collections import OrderedDict
 
 d2r_dict=OrderedDict([
 ('ँ', ' ̃'),
+('ं', 'ṃ'),
+('ः', 'ḥ'),
+('ृ', 'r̥'),
 
 ('ख्', 'kh'),
 ('क्', 'k'),
@@ -446,9 +449,6 @@ d2r_dict=OrderedDict([
 ('ओ', 'o'),
 ('अ', 'a'),
 
-('ं', 'ṃ'),
-('aृ', 'r̥'),
-
 ('ā ̃', 'ā̃'),
 ('ai ̃', 'aĩ'),
 ('au ̃', 'aũ'),
@@ -459,12 +459,16 @@ d2r_dict=OrderedDict([
 ('e ̃', 'ẽ'),
 ('o ̃', 'õ'),
 ('a ̃', 'ã'),
+    
+('ऋ', 'ृ'), 
 #deletes U+200D ZERO WIDTH JOINER [ZWJ] and U+200C ZERO WIDTH NON-JOINER [ZWNJ] which were showing up untransliterated
 ('‍', ''),
 ('‌', ''),
 ])
 
-def is_devanagari(text):
+def is_de
+
+anagari(text):
     text = "".join(i for i in text if i.isalnum())
     return (sum(True for i in text if ord(i) in range(2304, 2432)) / len(text)) >= 0.5
 
