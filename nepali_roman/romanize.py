@@ -453,9 +453,7 @@ d2r_dict=OrderedDict([
 ])
 
 
-def is_de
-
-anagari(text):
+def is_devanagari(text):
     text = "".join(i for i in text if i.isalnum())
     return (sum(True for i in text if ord(i) in range(2304, 2432)) / len(text)) >= 0.5
 
